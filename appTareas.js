@@ -29,8 +29,8 @@ function listarTareas (estado) {
         return tareas;
     }
 }
-console.log(listarTareas("En Progreso"))
-console.log(listarTareas("pepe"))
+console.log(listarTareas("En Progreso")) //lista las tareas En Progreso
+console.log(listarTareas("pepe")) //lista todas las tareas
   
 
 //    DESAFIO 4 //
@@ -39,32 +39,29 @@ function agregarTareas (titulo, estado) {
     for (const [indice] of tareas.entries()) { 
         //iterar entre los indices de tareas para ver el titulo
         if (titulo === tareas[indice].Titulo){
-            return alert("Error: La tarea que intenta ingresar ya existe");  
+            return alert("Error: La tarea que intenta ingresar ya existe");  //manda error al usuario si ya existe
         } else {
-            tareas.push ({Titulo: titulo, Estado: estado});
+            tareas.push ({Titulo: titulo, Estado: estado}); //si no existe, agrega la tarea
             alert("Tarea agregada correctamente");
             return tareas
         }
     }
 }
-console.log (agregarTareas("Repasar JS", "Pendiente"));
-console.log (agregarTareas("Aprender guitarra", "Pendiente"));
+console.log (agregarTareas("Repasar JS", "Pendiente")); //control negativo
+console.log (agregarTareas("Aprender guitarra", "Pendiente")); //control positivo
 
-  
-//   const modificarDos = (estado) => {
-//     if (
-//       estado === "En Progreso" ||
-//       estado === "Pendiente" ||
-//       estado === "Terminado" ||
-//       estado === "Por trabajar"
-//     ) {
-//       const modificar = tareas.filter((tareas) => tareas.Estado === estado);
-//       return alert("Ya existe");
-//     } else {
-//       const variacion = tareas.push({ Estado: verificacion });
-//       console.log(estado);
-//     }
-//   };
-  
-//   console.log(modificarDos);
- 
+
+//    DESAFIO 5    //
+
+// Crear una funcion que devolvera las tareas en donde el titulo coincida con el parametro dado. 
+// Ejemplo: existeTarea(“js”) // Devera devolver el array con los objetos que coincidan con el string sin importar su estado
+
+const existeTarea = (titulo) => {
+    for (const [indice] of tareas.entries()) { 
+        //iterar entre los indices de tareas para ver el titulo
+        if (titulo === tareas[indice].Titulo){
+            return tareas[indice]  //devuelve el objeto que coincide con el string
+        } else {
+            return alert("No existe esa Tarea")
+        }
+}
