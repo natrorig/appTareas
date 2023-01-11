@@ -39,15 +39,16 @@ function agregarTareas (titulo, estado) {
     for (const [indice] of tareas.entries()) { 
         //iterar entre los indices de tareas para ver el titulo
         if (titulo === tareas[indice].Titulo){
-            alert("Error: La tarea que intenta ingresar ya existe");  
+            return alert("Error: La tarea que intenta ingresar ya existe");  
         } else {
-        tareas.push ({Titulo: titulo, Estado: estado});
-        alert("Tarea agregada correctamente");
-        return tareas
+            tareas.push ({Titulo: titulo, Estado: estado});
+            alert("Tarea agregada correctamente");
+            return tareas
         }
     }
 }
 console.log (agregarTareas("Repasar JS", "Pendiente"));
+console.log (agregarTareas("Aprender guitarra", "Pendiente"));
 
   
 //   const modificarDos = (estado) => {
