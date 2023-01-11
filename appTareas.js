@@ -64,4 +64,9 @@ const existeTarea = (titulo) => {
         } else {
             return alert("No existe esa Tarea")
         }
+    }
 }
+
+console.log(existeTarea("Aprender guitarra")); //control positivo
+console.log(existeTarea("Aprender piano")); //control negativo
+
