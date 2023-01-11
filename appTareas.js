@@ -36,7 +36,7 @@ console.log(listarTareas("pepe"))
 //    DESAFIO 4 //
 
 function agregarTareas (titulo, estado) {
-    for (let indice of tareas) { 
+    for (const [indice] of tareas.entries()) { 
         //iterar entre los indices de tareas para ver el titulo
         if (titulo === tareas[indice].Titulo){
             alert("Error: La tarea que intenta ingresar ya existe");  
